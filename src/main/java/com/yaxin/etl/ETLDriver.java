@@ -25,6 +25,7 @@ public class ETLDriver {
 
         job.setOutputValueClass(NullWritable.class);
 
+        //数据都存储在HDFS上,这里使用传递参数来确定输入输出目录
         FileInputFormat.setInputPaths(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
